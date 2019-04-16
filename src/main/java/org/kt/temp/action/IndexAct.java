@@ -17,7 +17,7 @@ public class IndexAct {
 	
 	@RequestMapping("/hello")
 	public R index() {
-		
+		System.out.println("Hello,Jack!");
 		return R.ok("返回json字符串");
 	}
 	
