@@ -1,2 +1,2 @@
 # temp
-Project description
+Project description.

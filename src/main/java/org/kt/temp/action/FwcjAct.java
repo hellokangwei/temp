@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 房屋采集
+ */
 @RequestMapping("/api/v1/fwcj")
 @RestController
 public class FwcjAct {
