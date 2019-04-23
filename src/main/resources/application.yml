@@ -19,3 +19,7 @@ spring:
 logging:
   level:
     org.springframework.security: DEBUG
+  file: logs/kt.log
+  pattern:
+    console: '%date %-5level %logger{80} - %msg%n'
+    file: '%date %-5level %logger{80} - %msg%n'

@@ -28,9 +28,8 @@ public class WxLoginAct {
 
         Map<String, Object> map = HttpUtils.wxLogin(jsCode, okHttpClient, objectMapper);
 
-        if(map!=null) {
+        if(map!=null)
             return R.ok(map);
-        }
         return R.error();
     }
 
