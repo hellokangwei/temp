@@ -21,6 +21,7 @@ public class RedisConfig {
     private int database;
 
 
+    // 注册RedisUtil工具类
     @Bean
     public RedisUtil getRedisUtil(){
         // 如果没有配置 Host ，默认值为disabled，如果两者相等，则返回null
@@ -29,6 +30,5 @@ public class RedisConfig {
         redisUtil.initJedisPool(host,port,database);
         return redisUtil;
     }
-
 
 }

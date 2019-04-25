@@ -9,3 +9,4 @@ out
 gen
 target/
 src/test/resources/
+/logs/

@@ -1,6 +1,5 @@
 package org.kt.temp.util;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,7 +11,6 @@ import java.util.Map;
  * 请求工具类
  */
 public class HttpUtils {
-
 
     /**
      * 微信小程序登录凭证验证
@@ -31,6 +29,5 @@ public class HttpUtils {
             return null;
         }
     }
-
 
 }

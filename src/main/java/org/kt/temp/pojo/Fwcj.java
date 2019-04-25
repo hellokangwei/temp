@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Fwcj {
 
-    private Long id;
+    private String id;
     private String zjhm;
     private String xm;
     private String lxdh;

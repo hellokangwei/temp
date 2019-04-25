@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.kt.temp.interceptor.TokenInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -22,6 +24,10 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
+
+	// Token 拦截器注入
+	@Autowired
+	TokenInterceptor tokenInterceptor;
 
 	// 开放跨域
 	@Override
@@ -66,5 +72,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		mappingJackson2HttpMessageConverter.setSupportedMediaTypes(list);
 		return mappingJackson2HttpMessageConverter;
 	}
+
+	/* Token拦截器注册
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(tokenInterceptor);
+	} */
 
 }

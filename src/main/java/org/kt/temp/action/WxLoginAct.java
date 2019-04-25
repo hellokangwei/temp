@@ -2,8 +2,7 @@ package org.kt.temp.action;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
-import org.kt.temp.util.HttpUtils;
-import org.kt.temp.util.R;
+import org.kt.temp.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,13 +23,12 @@ public class WxLoginAct {
     private OkHttpClient okHttpClient;
 
     @RequestMapping("/doLogin")
-    public R wxLogin(String jsCode) {
-
-        Map<String, Object> map = HttpUtils.wxLogin(jsCode, okHttpClient, objectMapper);
-
-        if(map!=null)
-            return R.ok(map);
-        return R.error();
+    public ResultData wxLogin(String jsCode) {
+        try {
+            Map<String, Object> map = HttpUtils.wxLogin(jsCode, okHttpClient, objectMapper);
+            if(map != null) return ResultData.success(map);
+        } catch (Exception e) {}
+        return ResultData.error();
     }
 
 }

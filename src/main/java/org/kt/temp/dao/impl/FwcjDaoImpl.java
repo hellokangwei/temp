@@ -2,6 +2,7 @@ package org.kt.temp.dao.impl;
 
 import org.kt.temp.dao.FwcjDao;
 import org.kt.temp.pojo.Fwcj;
+import org.kt.temp.util.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,6 +21,7 @@ public class FwcjDaoImpl implements FwcjDao {
 
     @Override
     public void addFwcj(Fwcj fwcj) {
+        fwcj.setId(UUIDUtil.getRandom32PK());
         String sql = "insert into test_fwcj(id,zjhm,xm,lxdh,rzsj,xzdz,hjdz) values(?,?,?,?,?,?,?)";
 
         jdbcTemplate.update(sql,new Object[]{fwcj.getId(),fwcj.getZjhm(),fwcj.getXm(),fwcj.getLxdh(),fwcj.getRzsj(),fwcj.getXzdz(),fwcj.getHjdz()});
@@ -33,7 +35,7 @@ public class FwcjDaoImpl implements FwcjDao {
             @Override
             public Fwcj mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Fwcj f = new Fwcj();
-                f.setId(rs.getLong("id"));
+                f.setId(rs.getString("id"));
                 f.setXm(rs.getString("xm"));
                 f.setZjhm(rs.getString("zjhm"));
                 f.setLxdh(rs.getString("lxdh"));

@@ -31,7 +31,7 @@ public class RedisUtil {
         jedisPoolConfig.setTestOnBorrow(true);
 
         // 创建连接池
-        jedisPool = new  JedisPool(jedisPoolConfig,host,port,20*1000);
+        jedisPool = new JedisPool(jedisPoolConfig,host,port,20*1000);
     }
 
     // 获取jedis数据源

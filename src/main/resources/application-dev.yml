@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    jdbcUrl: jdbc:oracle:thin:@192.168.0.114:1521:KYSDEV
+    username: zaypt
+    password: zaypt
+    hikari:
+      maximumPoolSize: 15
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0

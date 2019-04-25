@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Random;
-
 /**
  * 房屋采集
  */
@@ -23,19 +21,13 @@ public class FwcjAct {
 
     @RequestMapping("/add")
     public Object addFwcj(@RequestBody Fwcj fwcj) {
-        System.out.println(fwcj);
-        try {
-            fwcj.setId(System.currentTimeMillis());
-            fwcjService.addFwcj(fwcj);
-        } catch (Exception e) {}
+        fwcjService.addFwcj(fwcj);
         return R.ok("添加成功");
     }
 
     @RequestMapping("/list")
     public Object list() {
         List<Fwcj> list = fwcjService.list();
-
-
         return R.ok(list);
     }
 
